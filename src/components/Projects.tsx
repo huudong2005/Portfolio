@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Check } from 'lucide-react'
+import YouMedCaseStudy from './YouMedCaseStudy'
 
 // Custom SVG Icons to avoid lucide version mismatches
 const GithubIcon = ({ size = 14 }: { size?: number }) => (
@@ -55,6 +57,7 @@ interface ProjectItem {
 }
 
 export default function Projects() {
+  const [isYouMedCaseStudyOpen, setIsYouMedCaseStudyOpen] = useState(false)
   const projects: ProjectItem[] = [
     {
       id: 1,
@@ -330,12 +333,12 @@ export default function Projects() {
                       </a>
                     )}
                     {proj.caseStudyUrl && proj.id === 1 && (
-                      <a
-                        href={proj.caseStudyUrl}
+                      <button
+                        onClick={() => setIsYouMedCaseStudyOpen(true)}
                         className="flex items-center gap-2 px-5 py-2.5 glass-panel hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white text-xs font-semibold rounded-xl transition-all duration-300 cursor-pointer"
                       >
                         <span>Read Case Study</span>
-                      </a>
+                      </button>
                     )}
                     {proj.liveUrl && (
                       <a
@@ -366,6 +369,12 @@ export default function Projects() {
           })}
         </div>
       </div>
+
+      {/* YouMed Case Study Modal */}
+      <YouMedCaseStudy
+        isOpen={isYouMedCaseStudyOpen}
+        onClose={() => setIsYouMedCaseStudyOpen(false)}
+      />
     </section>
   )
 }
