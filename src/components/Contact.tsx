@@ -59,66 +59,66 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="pt-24 pb-8 relative overflow-hidden bg-black/10">
-      {/* Background Orbs */}
-      <div className="absolute top-1/3 left-1/2 w-[450px] h-[450px] rounded-full bg-indigo-500/5 blur-[120px] pointer-events-none -translate-x-1/2" />
+    <section id="contact" className="py-28 md:py-36 relative overflow-hidden bg-transparent">
+      {/* Editorial layout lines */}
+      <div className="absolute left-12 top-0 w-[1px] h-full bg-stone-200/40 hidden md:block" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <h2 className="font-outfit text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Let's Build Something Great Together.
+          <span className="text-[11px] font-mono tracking-widest text-[#C2410C] uppercase font-bold">03. Connection</span>
+          <h2 className="font-serif text-4xl md:text-5xl font-light text-stone-900 tracking-tight leading-tight">
+            Let's craft meaningful experiences together.
           </h2>
-          <p className="text-gray-400 font-light text-sm md:text-base leading-relaxed">
-            Currently seeking a <span className="text-cyan-400 font-medium">Frontend / UI/UX Design Internship</span> in Ho Chi Minh City, Vietnam. I am excited to collaborate on real-world projects and grow alongside experienced developers. Feel free to reach out!
+          <p className="text-stone-650 font-sans font-light text-sm md:text-base leading-relaxed">
+            Currently seeking a <span className="text-stone-900 font-semibold">Frontend / UI/UX Design Internship</span> in Ho Chi Minh City, Vietnam. Feel free to reach out to discuss ideas, view design files, or explore collaborations!
           </p>
         </div>
 
         {/* Contact Info Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
-          {/* Email Card with Copy-to-Clipboard */}
-          <div className="glass-panel rounded-2xl p-6 flex flex-col items-center justify-between text-center relative overflow-hidden group">
-            <div className="p-3.5 rounded-2xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Mail size={24} />
+          {/* Email Card */}
+          <div className="bg-white border border-stone-200/80 rounded-xl p-8 flex flex-col items-center justify-between text-center shadow-[0_20px_50px_-15px_rgba(28,25,23,0.03)] group">
+            <div className="p-3.5 rounded-full bg-stone-50 border border-stone-150 text-stone-900 mb-4 transition-transform duration-300 group-hover:scale-105">
+              <Mail size={22} />
             </div>
             <div>
-              <h3 className="text-white font-semibold mb-1">Email Address</h3>
-              <p className="text-gray-400 text-sm font-mono break-all">{emailAddress}</p>
+              <h3 className="text-stone-900 font-serif text-lg font-normal mb-1">Email Address</h3>
+              <p className="text-stone-500 text-xs font-mono break-all select-all">{emailAddress}</p>
             </div>
-            <div className="mt-4 w-full flex items-center justify-center gap-2">
+            <div className="mt-5 w-full flex items-center justify-center gap-2">
               <a
                 href={`mailto:${emailAddress}`}
-                className="px-3.5 py-1.5 bg-white/5 border border-white/10 hover:border-white/20 text-gray-300 hover:text-white text-xs font-medium rounded-lg transition-colors cursor-pointer"
+                className="px-3.5 py-1.5 bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-700 text-xs font-medium rounded-lg transition-colors cursor-pointer"
               >
                 Send Mail
               </a>
               <button
                 onClick={copyToClipboard}
-                className="flex items-center gap-1.5 px-3.5 py-1.5 bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 hover:border-indigo-500/30 text-indigo-300 hover:text-indigo-200 text-xs font-semibold rounded-lg transition-all duration-200 cursor-pointer"
-                title="Copy to clipboard"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 bg-stone-900 hover:bg-stone-800 text-[#FDFBF7] text-xs font-semibold rounded-lg transition-all duration-200 cursor-pointer shadow-sm"
               >
                 <AnimatePresence mode="wait">
                   {copied ? (
                     <motion.span
                       key="check"
-                      initial={{ scale: 0.5, opacity: 0 }}
+                      initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.5, opacity: 0 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
                       className="flex items-center gap-1"
                     >
-                      <Check size={12} className="text-emerald-400" />
+                      <Check size={12} className="text-[#10B981]" />
                       <span>Copied!</span>
                     </motion.span>
                   ) : (
                     <motion.span
                       key="copy"
-                      initial={{ scale: 0.5, opacity: 0 }}
+                      initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.5, opacity: 0 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
                       className="flex items-center gap-1"
                     >
                       <Copy size={12} />
-                      <span>Copy</span>
+                      <span>Copy Address</span>
                     </motion.span>
                   )}
                 </AnimatePresence>
@@ -129,69 +129,69 @@ export default function Contact() {
           {/* Phone Card */}
           <a
             href="tel:0378113807"
-            className="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group hover:bg-white/5 transition-colors duration-300 cursor-pointer"
+            className="bg-white border border-stone-200/80 rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-[0_20px_50px_-15px_rgba(28,25,23,0.03)] group hover:border-stone-400 transition-all duration-350 cursor-pointer"
           >
-            <div className="p-3.5 rounded-2xl bg-cyan-400/10 text-cyan-400 border border-cyan-400/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Phone size={24} />
+            <div className="p-3.5 rounded-full bg-stone-50 border border-stone-150 text-stone-900 mb-4 transition-transform duration-300 group-hover:scale-105">
+              <Phone size={22} />
             </div>
-            <h3 className="text-white font-semibold mb-1">Phone / Zalo</h3>
-            <p className="text-gray-400 text-sm font-mono">0378113807</p>
-            <span className="mt-4 text-xs font-semibold text-cyan-400/80 group-hover:text-cyan-400 transition-colors">
+            <h3 className="text-stone-900 font-serif text-lg font-normal mb-1">Phone / Zalo</h3>
+            <p className="text-stone-550 text-xs font-mono">0378113807</p>
+            <span className="mt-5 text-xs font-medium text-[#C2410C] group-hover:text-stone-900 transition-colors">
               Call or Chat on Zalo &rarr;
             </span>
           </a>
 
           {/* Location Card */}
-          <div className="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group">
-            <div className="p-3.5 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-              <MapPin size={24} />
+          <div className="bg-white border border-stone-200/80 rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-[0_20px_50px_-15px_rgba(28,25,23,0.03)] group">
+            <div className="p-3.5 rounded-full bg-stone-50 border border-stone-150 text-stone-900 mb-4 transition-transform duration-300 group-hover:scale-105">
+              <MapPin size={22} />
             </div>
-            <h3 className="text-white font-semibold mb-1">Location</h3>
-            <p className="text-gray-400 text-sm">Ho Chi Minh City, Vietnam</p>
-            <span className="mt-4 text-xs font-mono text-gray-500">HUFLIT District 10</span>
+            <h3 className="text-stone-900 font-serif text-lg font-normal mb-1">Location</h3>
+            <p className="text-stone-605 text-sm font-light">Ho Chi Minh City, Vietnam</p>
+            <span className="mt-5 text-[10px] font-mono text-stone-400">HUFLIT District 10</span>
           </div>
         </div>
 
         {/* Center piece: Resume download callout */}
-        <div className="max-w-md mx-auto text-center mb-16">
+        <div className="max-w-xs mx-auto text-center mb-16">
           <button
             onClick={handleResumeDownload}
-            className="w-full flex items-center justify-center gap-3 py-4 bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold rounded-2xl hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all duration-300 transform active:scale-95 cursor-pointer"
+            className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-stone-900 hover:bg-stone-800 text-[#FDFBF7] font-semibold rounded-lg shadow-sm hover:shadow-[0_10px_25px_-5px_rgba(28,25,23,0.15)] transition-all duration-300 transform active:scale-[0.98] cursor-pointer"
           >
-            <FileDown size={22} className="animate-bounce" />
-            <span>Download Full Resume (PDF)</span>
+            <FileDown size={18} />
+            <span>Download Resume (PDF)</span>
           </button>
         </div>
 
         {/* Social Links */}
-        <div className="flex items-center justify-center gap-6 mb-16">
+        <div className="flex items-center justify-center gap-4 mb-20">
           <a
             href="https://www.linkedin.com/in/huu-dong-ngo-839193424"
             target="_blank"
             rel="noreferrer"
-            className="p-3 rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-white/20 bg-white/5 hover:bg-indigo-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)] cursor-pointer"
+            className="p-3 rounded-full border border-stone-200 text-stone-600 hover:text-stone-900 bg-white hover:bg-stone-50 shadow-sm transition-all duration-300 cursor-pointer"
             title="LinkedIn profile"
           >
-            <LinkedinIcon size={20} />
+            <LinkedinIcon size={18} />
           </a>
           <a
             href="https://github.com/huudong2005"
             target="_blank"
             rel="noreferrer"
-            className="p-3 rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-white/20 bg-white/5 hover:bg-cyan-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.2)] cursor-pointer"
+            className="p-3 rounded-full border border-stone-200 text-stone-600 hover:text-stone-900 bg-white hover:bg-stone-50 shadow-sm transition-all duration-300 cursor-pointer"
             title="GitHub profile"
           >
-            <GithubIcon size={20} />
+            <GithubIcon size={18} />
           </a>
         </div>
 
         {/* Horizontal separator */}
-        <div className="w-full h-[1px] bg-white/5 max-w-7xl mx-auto mb-8" />
+        <div className="w-full h-[1px] bg-stone-200/60 max-w-7xl mx-auto mb-8" />
 
         {/* Footer */}
-        <footer className="text-center text-xs text-gray-500 font-mono space-y-1.5 pb-4">
+        <footer className="text-center text-xs text-stone-450 font-mono space-y-1.5 pb-6">
           <p>© 2026 Ngo Huu Dong. All rights reserved.</p>
-          <p>Built with React, Tailwind CSS & Framer Motion.</p>
+          <p>Designed under a Warm Editorial aesthetic. Built with React & Tailwind CSS.</p>
         </footer>
       </div>
     </section>

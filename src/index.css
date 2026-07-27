@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-delayed: float-delayed 8s ease-in-out infinite;
@@ -21,8 +22,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #050505;
-    color: #f5f5f5;
+    background-color: #FDFBF7;
+    color: #1C1917;
   }
 
   body {
@@ -30,59 +31,71 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  /* Custom subtle scrollbar */
+  /* Custom subtle scrollbar in warm gray tone */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: #F9F8F3;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1f1f1f;
-    border-radius: 4px;
+    background: #E7E5E4; /* stone-200 */
+    border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #2e2e2e;
+    background: #D6D3D1; /* stone-300 */
   }
 }
 
-/* Glassmorphism utility classes */
+/* Editorial layout background grid and details */
+.editorial-grid {
+  background-image: 
+    linear-gradient(to right, rgba(28, 25, 23, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 25, 23, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Glassmorphism/Editorial Surface utility classes */
 .glass-panel {
-  background: rgba(15, 15, 15, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  box-shadow: 0 20px 50px -15px rgba(28, 25, 23, 0.03);
 }
 
 .glass-nav {
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(253, 251, 247, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(28, 25, 23, 0.06);
 }
 
-/* Highlight gradient border effect for cards */
-.gradient-border-hover {
+/* Soft border styling for cards */
+.editorial-border {
+  border: 1px solid rgba(28, 25, 23, 0.06);
+}
+
+/* Subtle editorial text underline animation */
+.editorial-underline {
   position: relative;
-  transition: all 0.3s ease;
 }
 
-.gradient-border-hover::before {
+.editorial-underline::after {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(to bottom right, rgba(99, 102, 241, 0.2), rgba(34, 211, 238, 0.2));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.gradient-border-hover:hover::before {
-  opacity: 1;
-  background: linear-gradient(to bottom right, rgba(99, 102, 241, 0.8), rgba(34, 211, 238, 0.8));
+.editorial-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

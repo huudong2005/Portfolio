@@ -29,10 +29,10 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
   if (!isOpen) return null
 
   const tabs = [
-    { id: 'brand', label: 'Thương hiệu & Logo', icon: <Compass size={16} /> },
-    { id: 'design-system', label: 'Hệ thống thiết kế', icon: <Palette size={16} /> },
-    { id: 'components', label: 'Components & AI Chatbox', icon: <Layout size={16} /> },
-    { id: 'screens', label: 'Bản đồ giao diện', icon: <Grid size={16} /> },
+    { id: 'brand', label: 'Thương hiệu & Logo', icon: <Compass size={14} /> },
+    { id: 'design-system', label: 'Hệ thống thiết kế', icon: <Palette size={14} /> },
+    { id: 'components', label: 'Components & Chatbox', icon: <Layout size={14} /> },
+    { id: 'screens', label: 'Bản đồ giao diện', icon: <Grid size={14} /> },
   ] as const
 
   const colors = [
@@ -60,46 +60,46 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer"
+          className="absolute inset-0 bg-stone-900/60 backdrop-blur-md cursor-pointer"
         />
 
         {/* Modal Window Container */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.96, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          transition={{ type: 'spring', damping: 25, stiffness: 250 }}
-          className="relative w-full max-w-5xl h-[85vh] md:h-[80vh] flex flex-col bg-[#0c0d12]/98 border border-white/10 rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden z-10"
+          exit={{ opacity: 0, scale: 0.96, y: 15 }}
+          transition={{ type: 'spring', damping: 26, stiffness: 220 }}
+          className="relative w-full max-w-5xl h-[85vh] md:h-[80vh] flex flex-col bg-[#FDFBF7] border border-stone-250/70 rounded-2xl md:rounded-3xl shadow-xl overflow-hidden z-10"
         >
           {/* Top Header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-[#0f1118]/80 backdrop-blur-md">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-stone-200/80 bg-white">
             <div className="flex items-center gap-3">
-              <span className="flex h-3 w-3 rounded-full bg-cyan-400 animate-pulse" />
+              <span className="flex h-2.5 w-2.5 rounded-full bg-[#064E3B]" />
               <div>
-                <h3 className="font-outfit text-lg font-bold text-white tracking-wide">
+                <h3 className="font-serif text-lg font-normal text-stone-900">
                   YouMed — UI/UX Case Study
                 </h3>
-                <p className="text-[10px] text-gray-400 font-mono">HEALTHCARE APPOINTMENT BOOKING APP</p>
+                <p className="text-[9px] text-stone-400 font-mono tracking-wider">HEALTHCARE APPOINTMENT BOOKING APP</p>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/5 hover:border-white/10 transition-colors"
+              className="p-1.5 rounded-lg border border-stone-200 hover:border-stone-400 text-stone-500 hover:text-stone-950 transition-colors"
             >
-              <X size={18} />
+              <X size={16} />
             </button>
           </div>
 
           {/* Navigation Tabs Bar */}
-          <div className="flex border-b border-white/5 overflow-x-auto bg-[#090a0e] scrollbar-thin px-4 py-2 gap-2">
+          <div className="flex border-b border-stone-200/60 overflow-x-auto bg-stone-50/50 px-4 py-2 gap-2 select-none">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === tab.id
-                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                    ? 'bg-stone-900 text-[#FDFBF7] shadow-sm'
+                    : 'text-stone-550 hover:text-stone-900 hover:bg-stone-100/50'
                 }`}
               >
                 {tab.icon}
@@ -109,56 +109,56 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
           </div>
 
           {/* Scrollable Content Workspace */}
-          <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 custom-scrollbar">
+          <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 bg-white/40">
             
             {/* BRANDING TAB */}
             {activeTab === 'brand' && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
               >
                 <div className="lg:col-span-5 space-y-5 text-left">
-                  <span className="text-[10px] font-mono tracking-widest text-indigo-400 uppercase font-bold px-2.5 py-1 rounded bg-indigo-500/10 border border-indigo-500/20">
+                  <span className="text-[10px] font-mono tracking-wider text-[#C2410C] uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
                     Thương Hiệu & Nhận Diện
                   </span>
-                  <h4 className="font-outfit text-2xl font-extrabold text-white">
+                  <h4 className="font-serif text-2xl font-light text-stone-900">
                     Logo YouMed Đa Dạng Theo Mùa
                   </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light">
-                    Ý tưởng chủ đạo của biểu tượng logo YouMed là chữ <strong className="text-white">"Y"</strong> được bo góc mềm mại, tạo thành nhánh cây hoặc hình dáng một trái tim đang mở rộng, gửi gắm thông điệp chăm sóc tận tâm.
+                  <p className="text-stone-600 text-sm leading-relaxed font-light">
+                    Ý tưởng chủ đạo của biểu tượng logo YouMed là chữ <strong className="text-stone-900 font-medium">"Y"</strong> được bo góc mềm mại, tạo thành nhánh cây hoặc hình dáng một trái tim đang mở rộng, gửi gắm thông điệp chăm sóc tận tâm.
                   </p>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light">
+                  <p className="text-stone-600 text-sm leading-relaxed font-light">
                     Nhằm tăng tính tương tác và tạo sự hào hứng cho người bệnh, logo được tùy biến động theo các sự kiện lớn trong năm bao gồm:
                   </p>
-                  <ul className="space-y-3 text-xs text-gray-300">
+                  <ul className="space-y-3 text-xs text-stone-600 font-sans font-light">
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                      <span><strong>Phiên bản Normal:</strong> Thiết kế xanh dương tối giản, sạch sẽ và an toàn.</span>
+                      <span><strong className="text-stone-900 font-medium">Phiên bản Normal:</strong> Thiết kế xanh dương tối giản, sạch sẽ và an toàn.</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                      <span><strong>Phiên bản Tết:</strong> Màu đỏ tài lộc, điểm xuyết hoa mai, hoa đào và họa tiết rước lộc truyền thống.</span>
+                      <span><strong className="text-stone-900 font-medium">Phiên bản Tết:</strong> Màu đỏ tài lộc, điểm xuyết hoa mai, hoa đào và họa tiết rước lộc truyền thống.</span>
                     </li>
                     <li className="flex items-center gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                      <span><strong>Phiên bản Noel:</strong> Tone xanh tuyết mát lạnh, đội mũ ông già Noel dễ thương đón Giáng Sinh.</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+                      <span><strong className="text-stone-900 font-medium">Phiên bản Noel:</strong> Tone xanh tuyết mát lạnh, đội mũ ông gia Noel dễ thương đón Giáng Sinh.</span>
                     </li>
                   </ul>
                 </div>
                 <div className="lg:col-span-7 flex justify-center">
                   <div 
                     onClick={() => setSelectedImage('/projects/youmed/youmed_logo.png')}
-                    className="relative max-w-lg w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-900 shadow-xl cursor-zoom-in group"
+                    className="relative max-w-lg w-full rounded-lg overflow-hidden border border-stone-200 bg-stone-50 shadow-sm cursor-zoom-in group"
                   >
                     <img
                       src="/projects/youmed/youmed_logo.png"
                       alt="YouMed Logo Seasonal Designs"
-                      className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"
+                      className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="px-3 py-1.5 bg-black/60 backdrop-blur-sm text-[10px] text-white font-mono rounded-lg border border-white/10">
-                        Click để phóng to
+                    <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
+                        Xem kích thước gốc
                       </span>
                     </div>
                   </div>
@@ -169,19 +169,19 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
             {/* DESIGN SYSTEM TAB */}
             {activeTab === 'design-system' && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-10"
               >
                 {/* Introduction */}
                 <div className="text-left max-w-3xl space-y-2">
-                  <span className="text-[10px] font-mono tracking-widest text-cyan-400 uppercase font-bold px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/20">
+                  <span className="text-[10px] font-mono tracking-wider text-[#064E3B] uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
                     Design Tokens
                   </span>
-                  <h4 className="font-outfit text-2xl font-extrabold text-white">
+                  <h4 className="font-serif text-2xl font-light text-stone-900">
                     Hệ Thống Phông Chữ & Bảng Màu Chuẩn Hóa
                   </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light">
+                  <p className="text-stone-600 text-sm leading-relaxed font-light">
                     Hệ thống thiết kế YouMed được thiết lập dựa trên các nguyên tắc thiết kế phẳng nhưng tối ưu hóa khả năng nhận diện thông tin nhanh chóng trên thiết bị cầm tay.
                   </p>
                 </div>
@@ -189,26 +189,26 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Colors Section */}
                   <div className="space-y-6 text-left">
-                    <h5 className="font-outfit text-base font-bold text-white flex items-center gap-2 pb-2 border-b border-white/5">
-                      <Palette size={16} className="text-indigo-400" />
+                    <h5 className="font-serif text-base font-semibold text-stone-900 flex items-center gap-2 pb-2 border-b border-stone-100">
+                      <Palette size={14} className="text-stone-500" />
                       <span>Bảng màu YouMed (Palette)</span>
                     </h5>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {colors.map((color, idx) => (
                         <div 
                           key={idx} 
-                          className="p-3 bg-white/5 border border-white/5 rounded-xl flex items-center gap-3.5 hover:border-white/10 transition-colors"
+                          className="p-3 bg-white border border-stone-200/80 rounded-lg flex items-center gap-3 hover:border-stone-400 transition-colors"
                         >
                           <div 
-                            className="w-10 h-10 rounded-lg shrink-0 border border-white/10 shadow" 
+                            className="w-8 h-8 rounded shrink-0 border border-stone-200 shadow-sm" 
                             style={{ backgroundColor: color.hex }}
                           />
                           <div className="min-w-0">
                             <div className="flex items-center gap-1.5">
-                              <span className="font-mono text-xs text-white font-bold">{color.hex}</span>
+                              <span className="font-mono text-xs text-stone-900 font-bold">{color.hex}</span>
                             </div>
-                            <span className="block text-[10px] text-gray-300 font-semibold truncate">{color.label}</span>
+                            <span className="block text-[10px] text-stone-500 font-medium truncate">{color.label}</span>
                           </div>
                         </div>
                       ))}
@@ -216,16 +216,16 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
 
                     <div 
                       onClick={() => setSelectedImage('/projects/youmed/youmed_colors.png')}
-                      className="relative rounded-2xl overflow-hidden border border-white/10 bg-neutral-900 cursor-zoom-in group"
+                      className="relative rounded-lg overflow-hidden border border-stone-200 bg-stone-50 cursor-zoom-in group"
                     >
                       <img
                         src="/projects/youmed/youmed_colors.png"
                         alt="YouMed Color Guide"
-                        className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"
+                        className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="px-3 py-1.5 bg-black/60 backdrop-blur-sm text-[10px] text-white font-mono rounded-lg border border-white/10">
-                          Click để xem ảnh gốc
+                      <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
+                          Xem kích thước gốc
                         </span>
                       </div>
                     </div>
@@ -233,37 +233,37 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
 
                   {/* Typography Section */}
                   <div className="space-y-6 text-left">
-                    <h5 className="font-outfit text-base font-bold text-white flex items-center gap-2 pb-2 border-b border-white/5">
-                      <Type size={16} className="text-cyan-400" />
+                    <h5 className="font-serif text-base font-semibold text-stone-900 flex items-center gap-2 pb-2 border-b border-stone-100">
+                      <Type size={14} className="text-stone-500" />
                       <span>Phân cấp Phông chữ (Typography)</span>
                     </h5>
 
                     <div className="space-y-3">
                       {typography.map((typo, idx) => (
-                        <div key={idx} className="p-3.5 bg-white/5 border border-white/5 rounded-xl space-y-1.5 hover:border-white/10 transition-colors">
+                        <div key={idx} className="p-3 bg-white border border-stone-200/80 rounded-lg space-y-1.5 hover:border-stone-400 transition-colors">
                           <div className="flex justify-between items-center">
-                            <span className="px-2 py-0.5 bg-indigo-500/10 text-indigo-400 font-mono text-[9px] font-bold rounded">
+                            <span className="px-2 py-0.5 bg-stone-100 text-stone-700 font-mono text-[9px] font-bold rounded border border-stone-200/60">
                               {typo.tag}
                             </span>
-                            <span className="text-[10px] text-gray-500 font-mono">{typo.spec}</span>
+                            <span className="text-[10px] text-stone-400 font-mono">{typo.spec}</span>
                           </div>
-                          <p className="text-xs text-white font-semibold">{typo.usage}</p>
+                          <p className="text-xs text-stone-850 font-semibold">{typo.usage}</p>
                         </div>
                       ))}
                     </div>
 
                     <div 
                       onClick={() => setSelectedImage('/projects/youmed/youmed_typo.png')}
-                      className="relative rounded-2xl overflow-hidden border border-white/10 bg-neutral-900 cursor-zoom-in group"
+                      className="relative rounded-lg overflow-hidden border border-stone-200 bg-stone-50 cursor-zoom-in group"
                     >
                       <img
                         src="/projects/youmed/youmed_typo.png"
                         alt="YouMed Typography"
-                        className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"
+                        className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="px-3 py-1.5 bg-black/60 backdrop-blur-sm text-[10px] text-white font-mono rounded-lg border border-white/10">
-                          Click để xem ảnh gốc
+                      <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
+                          Xem kích thước gốc
                         </span>
                       </div>
                     </div>
@@ -275,39 +275,39 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
             {/* COMPONENTS & AI TAB */}
             {activeTab === 'components' && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
               >
                 <div className="lg:col-span-5 space-y-5 text-left">
-                  <span className="text-[10px] font-mono tracking-widest text-purple-400 uppercase font-bold px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/20">
+                  <span className="text-[10px] font-mono tracking-wider text-stone-700 uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
                     UI Components & Chatbox
                   </span>
-                  <h4 className="font-outfit text-2xl font-extrabold text-white">
+                  <h4 className="font-serif text-2xl font-light text-stone-900">
                     Hệ Thống Thành Phần Độc Lập & Trợ Lý Ảo
                   </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light">
-                    Các khối giao diện (Figma Components) được xây dựng theo triết lý <strong>Atomic Design</strong> giúp nhà phát triển dễ dàng tái sử dụng và đồng bộ giao diện trong toàn bộ hệ thống.
+                  <p className="text-stone-600 text-sm leading-relaxed font-light">
+                    Các khối giao diện (Figma Components) được xây dựng theo triết lý <strong className="text-stone-900 font-medium">Atomic Design</strong> giúp nhà phát triển dễ dàng tái sử dụng và đồng bộ giao diện trong toàn bộ hệ thống.
                   </p>
                   
                   <div className="space-y-4">
                     <div className="flex gap-3">
-                      <div className="mt-1 p-1.5 bg-indigo-500/10 rounded-lg border border-indigo-500/20 text-indigo-400 shrink-0 h-fit">
+                      <div className="mt-1 p-1.5 bg-stone-50 rounded-lg border border-stone-200 text-stone-600 shrink-0 h-fit">
                         <Layout size={14} />
                       </div>
                       <div>
-                        <h6 className="text-xs font-bold text-white">UI Components Thống Nhất</h6>
-                        <p className="text-[11px] text-gray-400 mt-0.5">Thanh định vị (Bottom Navigation), Ô tìm kiếm thông minh, Bộ lọc thời gian khám, các thẻ thông tin bác sĩ và nút hành động khẩn cấp.</p>
+                        <h6 className="text-xs font-bold text-stone-900">UI Components Thống Nhất</h6>
+                        <p className="text-[11px] text-stone-500 mt-0.5">Thanh định vị (Bottom Navigation), Ô tìm kiếm thông minh, Bộ lọc thời gian khám, các thẻ thông tin bác sĩ và nút hành động khẩn cấp.</p>
                       </div>
                     </div>
 
                     <div className="flex gap-3">
-                      <div className="mt-1 p-1.5 bg-cyan-500/10 rounded-lg border border-cyan-500/20 text-cyan-400 shrink-0 h-fit">
+                      <div className="mt-1 p-1.5 bg-stone-50 rounded-lg border border-stone-200 text-stone-600 shrink-0 h-fit">
                         <MessageSquare size={14} />
                       </div>
                       <div>
-                        <h6 className="text-xs font-bold text-white">Trợ Lý AI YouMed (Chatbot)</h6>
-                        <p className="text-[11px] text-gray-400 mt-0.5">Luồng chat được thiết kế chu đáo để hướng dẫn người bệnh khai báo triệu chứng ban đầu. Sau đó đề xuất bệnh viện chuyên khoa và địa chỉ chính xác gần nhất.</p>
+                        <h6 className="text-xs font-bold text-stone-900">Trợ Lý AI YouMed (Chatbot)</h6>
+                        <p className="text-[11px] text-stone-500 mt-0.5">Luồng chat được thiết kế chu đáo để hướng dẫn người bệnh khai báo triệu chứng ban đầu. Sau đó đề xuất bệnh viện chuyên khoa và địa chỉ chính xác gần nhất.</p>
                       </div>
                     </div>
                   </div>
@@ -316,16 +316,16 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                 <div className="lg:col-span-7 flex justify-center">
                   <div 
                     onClick={() => setSelectedImage('/projects/youmed/youmed_components.png')}
-                    className="relative max-w-lg w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-900 shadow-xl cursor-zoom-in group"
+                    className="relative max-w-lg w-full rounded-lg overflow-hidden border border-stone-200 bg-stone-50 shadow-sm cursor-zoom-in group"
                   >
                     <img
                       src="/projects/youmed/youmed_components.png"
                       alt="YouMed UI Components Library"
-                      className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"
+                      className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="px-3 py-1.5 bg-black/60 backdrop-blur-sm text-[10px] text-white font-mono rounded-lg border border-white/10">
-                        Click để phóng to
+                    <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
+                        Xem kích thước gốc
                       </span>
                     </div>
                   </div>
@@ -336,18 +336,18 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
             {/* SCREEN FLOWS TAB */}
             {activeTab === 'screens' && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-6"
               >
                 <div className="text-left max-w-3xl space-y-2">
-                  <span className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase font-bold px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">
+                  <span className="text-[10px] font-mono tracking-wider text-[#064E3B] uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
                     Bản Đồ Giao Diện
                   </span>
-                  <h4 className="font-outfit text-2xl font-extrabold text-white">
+                  <h4 className="font-serif text-2xl font-light text-stone-900">
                     Hệ Thống 20+ Màn Hình Chức Năng Hoàn Chỉnh
                   </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light">
+                  <p className="text-stone-600 text-sm leading-relaxed font-light">
                     Sơ đồ phân bổ và kết nối các màn hình của người dùng. Từ bước đăng nhập, khám phá danh bạ bác sĩ, tiến hành đặt chỗ trực tuyến, thực hiện cuộc gọi video tư vấn từ xa, đến quản lý hồ sơ bệnh án cá nhân.
                   </p>
                 </div>
@@ -355,17 +355,17 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                 <div className="flex justify-center">
                   <div 
                     onClick={() => setSelectedImage('/projects/youmed/youmed_screens.png')}
-                    className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl cursor-zoom-in group"
+                    className="relative w-full rounded-lg overflow-hidden border border-stone-200 bg-[#FAF9F6] shadow-sm cursor-zoom-in group"
                   >
                     <img
                       src="/projects/youmed/youmed_screens.png"
                       alt="YouMed Complete UI Flow Diagram"
-                      className="w-full h-auto object-contain bg-[#121319] max-h-[500px]"
+                      className="w-full h-auto object-contain bg-[#FAF9F6] max-h-[500px]"
                     />
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="px-3.5 py-2 bg-black/75 backdrop-blur-sm text-xs text-white font-semibold rounded-lg border border-white/10 flex items-center gap-2">
-                        <Info size={14} className="text-cyan-400" />
-                        <span>Nhấn để phóng to toàn màn hình xem rõ chi tiết</span>
+                    <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="px-3.5 py-2 bg-stone-900/90 text-xs text-white font-semibold rounded flex items-center gap-2">
+                        <Info size={14} className="text-[#C2410C]" />
+                        <span>Nhấn để xem sơ đồ toàn màn hình</span>
                       </span>
                     </div>
                   </div>
@@ -376,9 +376,9 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
           </div>
 
           {/* Modal Footer Info */}
-          <div className="px-6 py-3 bg-[#08090d] border-t border-white/5 text-center">
-            <span className="text-[10px] text-gray-500 font-mono">
-              Designed & Prototyped in Figma • Developed in React & Tailwind CSS
+          <div className="px-6 py-3.5 bg-stone-50 border-t border-stone-200 text-center">
+            <span className="text-[10px] text-stone-400 font-mono tracking-wider">
+              DESIGNED IN FIGMA • CODE COMPILATION REACT & TAILWIND CSS
             </span>
           </div>
         </motion.div>
@@ -387,21 +387,21 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
       {/* Lightbox / Zoom Overlay */}
       <AnimatePresence>
         {selectedImage && (
-          <div className="fixed inset-0 z-51 flex items-center justify-center p-4 overflow-hidden">
+          <div className="fixed inset-0 z-55 flex items-center justify-center p-4 overflow-hidden">
             {/* Zoom backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImage(null)}
-              className="absolute inset-0 bg-black/95 backdrop-blur-lg cursor-zoom-out"
+              className="absolute inset-0 bg-stone-950/90 backdrop-blur-md cursor-zoom-out"
             />
             {/* Zoom Image container */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.97 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.97 }}
-              className="relative max-w-6xl max-h-[90vh] z-10 overflow-auto select-none rounded-xl border border-white/5 bg-[#121319]"
+              exit={{ opacity: 0, scale: 0.98 }}
+              className="relative max-w-6xl max-h-[90vh] z-10 overflow-auto select-none rounded-lg border border-stone-850 bg-stone-900"
             >
               <img
                 src={selectedImage}
@@ -410,9 +410,9 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/10 hover:border-white/20 transition-all hover:scale-105"
+                className="absolute top-4 right-4 p-2 rounded-full bg-stone-950/80 hover:bg-stone-950 text-white border border-stone-800 transition-all hover:scale-105"
               >
-                <X size={16} />
+                <X size={14} />
               </button>
             </motion.div>
           </div>

@@ -3,7 +3,6 @@ import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
-import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Preloader from './components/Preloader'
@@ -23,7 +22,10 @@ function App() {
   }, [isLoading])
 
   return (
-    <div className="bg-[#050505] text-[#f5f5f5] min-h-screen selection:bg-indigo-500 selection:text-white font-sans antialiased">
+    <div className="bg-[#FDFBF7] text-[#1C1917] min-h-screen selection:bg-[#1C1917] selection:text-[#FDFBF7] font-sans antialiased relative overflow-hidden">
+      {/* Editorial subtle grid lines in background */}
+      <div className="absolute inset-0 editorial-grid opacity-75 pointer-events-none z-0" />
+
       {/* Preloader Waiting Screen */}
       <AnimatePresence mode="wait">
         {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
@@ -33,10 +35,9 @@ function App() {
       <Navbar />
 
       {/* Main Content Sections */}
-      <main className="w-full">
+      <main className="w-full relative z-10">
         <Hero />
         <About />
-        <Skills />
         <Projects />
         <Contact />
       </main>

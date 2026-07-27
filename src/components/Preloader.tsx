@@ -9,7 +9,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    const duration = 2000 // 2 seconds total loading duration
+    const duration = 1600 // 1.6 seconds total loading duration
     const intervalTime = 20
     const step = 100 / (duration / intervalTime)
 
@@ -18,7 +18,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         const next = prev + step
         if (next >= 100) {
           clearInterval(timer)
-          setTimeout(onComplete, 300) // Small delay before transition
+          setTimeout(onComplete, 200) // Small delay before transition
           return 100
         }
         return next
@@ -34,39 +34,36 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       exit={{
         opacity: 0,
         y: '-100svh',
-        transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+        transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] },
       }}
-      className="fixed inset-0 z-[100] bg-[#050505] flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[100] bg-[#FDFBF7] flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Background Glowing Orb */}
-      <div className="absolute w-[300px] h-[300px] rounded-full bg-indigo-500/10 blur-[100px] pointer-events-none" />
-
       <div className="relative flex flex-col items-center z-10">
         {/* Animated Brand text */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="font-outfit text-3xl md:text-4xl font-extrabold tracking-tight text-white flex items-center gap-1.5"
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 flex items-center gap-1.5"
         >
           <span>Dong Ngo</span>
-          <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_rgba(34,211,238,0.7)]" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C2410C]" />
         </motion.div>
 
         {/* Dynamic percentage counter */}
         <motion.span
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
-          transition={{ delay: 0.2 }}
-          className="text-xs font-mono text-cyan-400 mt-6 tracking-widest"
+          animate={{ opacity: 0.6 }}
+          transition={{ delay: 0.15 }}
+          className="text-xs font-serif italic text-stone-500 mt-4 tracking-widest"
         >
           {Math.floor(progress)}%
         </motion.span>
 
         {/* Elegant sleek Loading Bar */}
-        <div className="w-48 h-[2px] bg-white/5 rounded-full mt-3 overflow-hidden relative border border-white/5">
+        <div className="w-40 h-[1.5px] bg-stone-200/60 rounded-full mt-2.5 overflow-hidden relative border-none">
           <motion.div
-            className="h-full bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full"
+            className="h-full bg-stone-900 rounded-full"
             style={{ width: `${progress}%` }}
             transition={{ ease: 'easeInOut' }}
           />
@@ -75,9 +72,9 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         {/* Minimalist Sub-Status text */}
         <motion.span
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.3 }}
-          transition={{ delay: 0.4 }}
-          className="text-[9px] font-mono text-gray-500 mt-2 uppercase tracking-widest"
+          animate={{ opacity: 0.4 }}
+          transition={{ delay: 0.3 }}
+          className="text-[9px] font-sans text-stone-500 mt-2 uppercase tracking-widest"
         >
           Initializing Portfolio
         </motion.span>
