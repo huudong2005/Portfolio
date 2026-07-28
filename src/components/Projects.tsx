@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ExternalLink, Check, ArrowRight } from 'lucide-react'
 import YouMedCaseStudy from './YouMedCaseStudy'
 import HotToysShowcase from './HotToysShowcase'
+import PhoShowcase from './PhoShowcase'
 
 // Custom SVG Icons to avoid lucide version mismatches
 const FigmaIcon = ({ size = 14 }: { size?: number }) => (
@@ -47,6 +48,7 @@ const GithubIcon = ({ size = 14 }: { size?: number }) => (
 export default function Projects() {
   const [isYouMedCaseStudyOpen, setIsYouMedCaseStudyOpen] = useState(false)
   const [isHotToysShowcaseOpen, setIsHotToysShowcaseOpen] = useState(false)
+  const [isPhoShowcaseOpen, setIsPhoShowcaseOpen] = useState(false)
 
   const rowVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -74,7 +76,7 @@ export default function Projects() {
 
         {/* Asymmetrical Magazine Grid */}
         <div className="space-y-16 md:space-y-24">
-          
+
           {/* FEATURED PROJECT: YouMed (Full Width / Large Split Card) */}
           <motion.div
             variants={rowVariants}
@@ -84,19 +86,27 @@ export default function Projects() {
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white border border-stone-200/80 rounded-xl p-6 md:p-8 shadow-[0_20px_50px_-15px_rgba(28,25,23,0.03)]"
           >
             {/* Visual Container */}
-            <div className="lg:col-span-7 w-full overflow-hidden rounded-lg bg-stone-50 border border-stone-200/60 shadow-sm relative group cursor-pointer" onClick={() => setIsYouMedCaseStudyOpen(true)}>
-              <div className="aspect-[16/10] overflow-hidden">
+            <div
+              className="lg:col-span-7 w-full overflow-hidden rounded-lg bg-gradient-to-tr from-stone-100 to-stone-50/30 border border-stone-200/60 shadow-sm relative group cursor-pointer aspect-[16/10] flex items-center justify-center p-6 md:p-8"
+              onClick={() => setIsYouMedCaseStudyOpen(true)}
+            >
+              {/* Phone Mockup Wrapper */}
+              <div className="h-full aspect-[9/19] rounded-[24px] border-[4px] border-stone-900 bg-stone-950 overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] relative transition-transform duration-500 group-hover:scale-[1.02]">
+                {/* Phone Speaker/Notch */}
+                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-12 h-2.5 bg-stone-900 rounded-full z-20 flex items-center justify-center">
+                  <span className="w-1 h-1 rounded-full bg-stone-850" />
+                </div>
                 <img
                   src="/projects/healthcare.png"
-                  alt="Healthcare Appointment Booking App"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  alt="Healthcare Appointment Booking App Screen"
+                  className="w-full h-full object-cover object-top select-none"
                   onError={(e) => {
                     (e.target as HTMLElement).style.display = 'none'
                   }}
                 />
               </div>
-              <div className="absolute inset-0 bg-stone-900/5 group-hover:bg-transparent transition-colors duration-300" />
-              <div className="absolute top-4 left-4 flex flex-col gap-2">
+              <div className="absolute inset-0 bg-stone-900/5 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+              <div className="absolute top-4 left-4 flex flex-col gap-2 pointer-events-none">
                 <span className="text-[9px] font-mono font-bold tracking-wider uppercase px-2 py-1 bg-stone-900 text-[#FDFBF7] rounded">
                   Figma Prototyped
                 </span>
@@ -164,16 +174,16 @@ export default function Projects() {
             </div>
           </motion.div>
 
-          {/* ASYMMETRICAL 2-COLUMN GRID (Banh Mi & Hot Toys) */}
+          {/* 2-COLUMN GRID (Banh Mi & Pho Landing Page side-by-side) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            
-            {/* PROJECT 2: Vietnamese Banh Mi Landing Page (Spans 7 Columns) */}
+
+            {/* PROJECT 2: Vietnamese Banh Mi Landing Page (Spans 6 Columns) */}
             <motion.div
               variants={rowVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-80px' }}
-              className="lg:col-span-7 bg-white border border-stone-200/80 rounded-xl p-6 shadow-[0_20px_50px_-15px_rgba(28,25,23,0.03)] flex flex-col justify-between"
+              className="lg:col-span-6 bg-white border border-stone-200/80 rounded-xl p-6 shadow-[0_20px_50px_-15px_rgba(28,25,23,0.03)] flex flex-col justify-between"
             >
               <div className="space-y-5">
                 {/* Browser Mockup Visual */}
@@ -236,7 +246,7 @@ export default function Projects() {
                   <ExternalLink size={12} />
                   <span>Live Demo</span>
                 </a>
-                
+
                 <a
                   href="https://github.com/huudong2005"
                   target="_blank"
@@ -249,31 +259,32 @@ export default function Projects() {
               </div>
             </motion.div>
 
-            {/* PROJECT 3: Hot Toys Store E-commerce (Spans 5 Columns) */}
+            {/* PROJECT 3: Pho Landing Page (Spans 6 Columns) */}
             <motion.div
               variants={rowVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-80px' }}
-              className="lg:col-span-5 bg-white border border-stone-200/80 rounded-xl p-6 shadow-[0_20px_50px_-15px_rgba(28,25,23,0.03)] flex flex-col justify-between"
+              className="lg:col-span-6 bg-white border border-stone-200/80 rounded-xl p-6 shadow-[0_20px_50px_-15px_rgba(28,25,23,0.03)] flex flex-col justify-between cursor-pointer group"
+              onClick={() => setIsPhoShowcaseOpen(true)}
             >
               <div className="space-y-5">
-                {/* IDE Mockup Visual */}
-                <div className="w-full rounded-lg overflow-hidden border border-stone-250/60 bg-stone-50 group shadow-sm flex flex-col">
-                  {/* topbar */}
+                {/* Browser Mockup Visual */}
+                <div className="w-full rounded-lg overflow-hidden border border-stone-250/60 bg-stone-50 shadow-sm flex flex-col">
+                  {/* Browser topbar */}
                   <div className="flex items-center justify-between border-b border-stone-200/80 px-3 py-2 bg-stone-100/80 select-none">
                     <div className="flex gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-stone-200" />
                       <span className="w-2 h-2 rounded-full bg-stone-200" />
                       <span className="w-2 h-2 rounded-full bg-stone-200" />
                     </div>
-                    <div className="text-[8px] text-stone-400 font-mono">hottoys-ecommerce.local</div>
+                    <div className="text-[8px] text-stone-400 font-mono">pho-landing-page-1.vercel.app</div>
                     <div className="w-6" />
                   </div>
                   <div className="aspect-[16/9] overflow-hidden relative">
                     <img
-                      src="/projects/hottoys.jpg"
-                      alt="Hot Toys Store E-commerce"
+                      src="/projects/pho.png"
+                      alt="Vietnamese Pho Landing Page"
                       className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none'
@@ -284,31 +295,116 @@ export default function Projects() {
 
                 <div className="flex flex-wrap gap-2 pt-2">
                   <span className="text-[10px] font-mono font-medium tracking-wide uppercase px-2.5 py-0.5 bg-stone-100 text-stone-700 border border-stone-200/60 rounded-full">
-                    ASP.NET Core
+                    UX Design
                   </span>
                   <span className="text-[10px] font-mono font-medium tracking-wide uppercase px-2.5 py-0.5 bg-stone-100 text-stone-700 border border-stone-200/60 rounded-full">
-                    Oracle DB
+                    Design Tokens
+                  </span>
+                  <span className="text-[10px] font-mono font-medium tracking-wide uppercase px-2.5 py-0.5 bg-stone-100 text-stone-700 border border-stone-200/60 rounded-full">
+                    Responsive Web
                   </span>
                 </div>
 
                 <h3 className="font-serif text-2xl font-light text-stone-900 leading-snug">
-                  Hot Toys Store E-commerce
+                  Pho Landing Page
                 </h3>
 
                 {/* Problem Statement Box */}
-                <div className="border-l-[1.5px] border-[#1C1917] pl-4 py-0.5">
+                <div className="border-l-[1.5px] border-[#C23A22] pl-4 py-0.5">
                   <span className="text-[9px] font-mono uppercase tracking-wider text-stone-400 font-bold block">UX Problem Statement</span>
                   <p className="text-stone-600 text-xs font-light mt-0.5">
-                    Niche collectors require immediate stock transparency and clean catalog filters. This solution maps a relational database structure directly into intuitive inventory controls.
+                    Food showcase websites often fail to reflect the authentic heritage of traditional dishes. This landing page establishes a detailed, color-calibrated typography system for an immersive experience.
                   </p>
                 </div>
 
                 <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-light">
-                  A full-stack MVC application integrating interactive Razor Pages frontend workflows with a secure database for inventory control.
+                  A beautiful cultural presentation landing page featuring Phở, Vietnam's national dish. Integrates rich warm colors, typography rules, and an adaptive layout designed in Figma.
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4 pt-6 mt-auto">
+              <div className="flex flex-wrap items-center gap-3 pt-6 mt-auto" onClick={(e) => e.stopPropagation()}>
+                <a
+                  href="https://pho-landing-page-1.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-800 text-[#FDFBF7] text-xs font-medium rounded-lg shadow-sm transition-all"
+                >
+                  <ExternalLink size={12} />
+                  <span>Live Demo</span>
+                </a>
+
+                <a
+                  href="https://www.figma.com/design/2BSxSGfH6BTpbCGUSBJrLI/Pho?node-id=0-1&t=QbP3x0MotW9kB3Oh-1"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-2 border border-stone-200 hover:border-stone-900 text-xs text-stone-600 hover:text-stone-900 rounded-lg transition-all"
+                >
+                  <FigmaIcon size={12} />
+                  <span>Figma Design</span>
+                </a>
+
+                <button
+                  onClick={() => setIsPhoShowcaseOpen(true)}
+                  className="flex items-center gap-1 py-1 text-stone-900 hover:text-[#C23A22] text-xs font-semibold tracking-wide transition-all ml-auto hover:underline"
+                >
+                  <span>Xem Thiết Kế</span>
+                  <ArrowRight size={12} />
+                </button>
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* FEATURED PROJECT 4: Hot Toys Store E-commerce (Full Width / Large Split Card) */}
+          <motion.div
+            variants={rowVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white border border-stone-200/80 rounded-xl p-6 md:p-8 shadow-[0_20px_50px_-15px_rgba(28,25,23,0.03)]"
+          >
+            {/* Content Container (Left side on desktop for checkers pattern) */}
+            <div className="lg:col-span-5 flex flex-col text-left space-y-5 order-2 lg:order-1">
+              <div className="flex flex-wrap gap-2">
+                <span className="text-[10px] font-mono font-medium tracking-wide uppercase px-2.5 py-0.5 bg-stone-100 text-stone-700 border border-stone-200/60 rounded-full">
+                  ASP.NET Core
+                </span>
+                <span className="text-[10px] font-mono font-medium tracking-wide uppercase px-2.5 py-0.5 bg-stone-100 text-stone-700 border border-stone-200/60 rounded-full">
+                  Oracle DB
+                </span>
+                <span className="text-[10px] font-mono font-medium tracking-wide uppercase px-2.5 py-0.5 bg-stone-100 text-stone-700 border border-stone-200/60 rounded-full">
+                  Fullstack Web
+                </span>
+              </div>
+
+              <h3 className="font-serif text-2xl md:text-3.5xl font-light text-stone-900 leading-tight">
+                Hot Toys Store E-commerce
+              </h3>
+
+              {/* Problem Statement Box */}
+              <div className="border-l-[1.5px] border-[#1C1917] pl-4 py-0.5 my-2">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 font-bold block">UX Problem Statement</span>
+                <p className="text-stone-600 text-xs md:text-sm font-light mt-1">
+                  Niche collectors require immediate stock transparency and clean catalog filters. This solution maps a relational database structure directly into intuitive inventory controls.
+                </p>
+              </div>
+
+              <p className="text-stone-600 text-sm leading-relaxed font-light">
+                A full-stack MVC application integrating interactive Razor Pages frontend workflows with a secure database for inventory control.
+              </p>
+
+              <ul className="space-y-2">
+                {['Interactive catalog with multi-criteria filtering', 'Role-based access control for customers and administrators', 'Administrative dashboard with chart visualizations for revenue tracking'].map((hl, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-xs text-stone-650">
+                    <span className="p-0.5 rounded bg-stone-900/10 text-stone-900 shrink-0 mt-0.5">
+                      <Check size={10} />
+                    </span>
+                    <span>{hl}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-4 pt-3">
                 <button
                   onClick={() => setIsHotToysShowcaseOpen(true)}
                   className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-800 text-[#FDFBF7] text-xs font-medium rounded-lg shadow-sm transition-all cursor-pointer"
@@ -316,7 +412,7 @@ export default function Projects() {
                   <ExternalLink size={12} />
                   <span>View System Screens</span>
                 </button>
-                
+
                 <a
                   href="https://github.com/huudong2005/HotToysStore"
                   target="_blank"
@@ -327,9 +423,44 @@ export default function Projects() {
                   <span>GitHub</span>
                 </a>
               </div>
-            </motion.div>
+            </div>
 
-          </div>
+            {/* Visual Container (Right side on desktop) */}
+            <div
+              className="lg:col-span-7 w-full overflow-hidden rounded-lg bg-stone-50 border border-stone-200/60 shadow-sm relative group cursor-pointer order-1 lg:order-2"
+              onClick={() => setIsHotToysShowcaseOpen(true)}
+            >
+              {/* IDE Mockup Visual */}
+              <div className="w-full flex flex-col">
+                {/* topbar */}
+                <div className="flex items-center justify-between border-b border-stone-200/80 px-3 py-2 bg-stone-100/80 select-none">
+                  <div className="flex gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-stone-200" />
+                    <span className="w-2 h-2 rounded-full bg-stone-200" />
+                    <span className="w-2 h-2 rounded-full bg-stone-200" />
+                  </div>
+                  <div className="text-[8px] text-stone-400 font-mono">hottoys-ecommerce.local</div>
+                  <div className="w-6" />
+                </div>
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <img
+                    src="/projects/hottoys.jpg"
+                    alt="Hot Toys Store E-commerce"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                    onError={(e) => {
+                      (e.target as HTMLElement).style.display = 'none'
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-stone-900/5 group-hover:bg-transparent transition-colors duration-300" />
+              <div className="absolute top-4 left-4 flex flex-col gap-2">
+                <span className="text-[9px] font-mono font-bold tracking-wider uppercase px-2 py-1 bg-stone-900 text-[#FDFBF7] rounded">
+                  System Screens
+                </span>
+              </div>
+            </div>
+          </motion.div>
 
         </div>
       </div>
@@ -345,6 +476,13 @@ export default function Projects() {
         isOpen={isHotToysShowcaseOpen}
         onClose={() => setIsHotToysShowcaseOpen(false)}
       />
+
+      {/* Pho Showcase Modal */}
+      <PhoShowcase
+        isOpen={isPhoShowcaseOpen}
+        onClose={() => setIsPhoShowcaseOpen(false)}
+      />
     </section>
+
   )
 }
