@@ -29,9 +29,9 @@ export default function HotToysShowcase({ isOpen, onClose }: HotToysShowcaseProp
   if (!isOpen) return null
 
   const tabs = [
-    { id: 'home', label: 'Trang chủ & Banner', icon: <Layout size={14} /> },
-    { id: 'catalog', label: 'Danh mục & Sản phẩm', icon: <ShoppingBag size={14} /> },
-    { id: 'dashboard', label: 'Thống kê & Quản lý', icon: <BarChart3 size={14} /> },
+    { id: 'home', label: 'Home & Banner', icon: <Layout size={14} /> },
+    { id: 'catalog', label: 'Catalog & Products', icon: <ShoppingBag size={14} /> },
+    { id: 'dashboard', label: 'Statistics & Management', icon: <BarChart3 size={14} /> },
   ] as const
 
   return (
@@ -60,7 +60,7 @@ export default function HotToysShowcase({ isOpen, onClose }: HotToysShowcaseProp
               <span className="flex h-2.5 w-2.5 rounded-full bg-stone-700 animate-pulse" />
               <div>
                 <h3 className="font-serif text-lg font-normal text-stone-900">
-                  Hot Toys Store — Giao Diện Hệ Thống
+                  Hot Toys Store — System Interface
                 </h3>
                 <p className="text-[9px] text-stone-400 font-mono tracking-wider">ASP.NET CORE MVC & ORACLE DB E-COMMERCE</p>
               </div>
@@ -104,16 +104,16 @@ export default function HotToysShowcase({ isOpen, onClose }: HotToysShowcaseProp
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   <div className="lg:col-span-5 space-y-5 text-left">
                     <span className="text-[10px] font-mono tracking-wider text-[#C2410C] uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
-                      Trang Chủ & Hero Banner
+                      Homepage & Hero Banner
                     </span>
                     <h4 className="font-serif text-2xl font-light text-stone-900">
-                      Chào Mừng Đến Với ToyStore
+                      Welcome to ToyStore
                     </h4>
                     <p className="text-stone-650 text-sm leading-relaxed font-light">
-                      Trang chủ thiết kế theo phong cách tối giản huyền bí (Dark Elegant), tập trung làm nổi bật hình ảnh của các mô hình đồ chơi cao cấp (Premium Action Figures).
+                      The homepage features a dark, elegant minimalist design, focusing heavily on highlighting premium action figures.
                     </p>
                     <p className="text-stone-655 text-sm leading-relaxed font-light">
-                      Banner chính hiển thị hình ảnh có độ tương phản cao với hiệu ứng chuyển cảnh mượt mà, tích hợp thanh tìm kiếm thông minh trực quan ngay tại trung tâm giúp tối ưu hóa luồng trải nghiệm khách hàng.
+                      The hero banner displays high-contrast visuals with smooth transitions, integrating an intuitive smart search bar at the center to optimize the customer search flow.
                     </p>
                   </div>
                   <div className="lg:col-span-7 flex justify-center">
@@ -128,7 +128,7 @@ export default function HotToysShowcase({ isOpen, onClose }: HotToysShowcaseProp
                       />
                       <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                          Xem kích thước gốc
+                          View Original Size
                         </span>
                       </div>
                     </div>
@@ -149,23 +149,23 @@ export default function HotToysShowcase({ isOpen, onClose }: HotToysShowcaseProp
                       />
                       <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                          Xem kích thước gốc
+                          View Original Size
                         </span>
                       </div>
                     </div>
                   </div>
                   <div className="lg:col-span-5 space-y-5 text-left order-1 lg:order-2">
                     <span className="text-[10px] font-mono tracking-wider text-stone-700 uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
-                      Sản Phẩm Nổi Bật
+                      Featured Products
                     </span>
                     <h4 className="font-serif text-2xl font-light text-stone-900">
-                      Phân Phối Theo Bộ Sưu Tập
+                      Distribution by Collection
                     </h4>
                     <p className="text-stone-600 text-sm leading-relaxed font-light">
-                      Khu vực giới thiệu các bộ sưu tập đặc biệt như <strong className="text-stone-900 font-medium">Anime Figures (2B)</strong>, <strong className="text-stone-900 font-medium">DC Figures (Superman)</strong>, hay các sản phẩm cực kỳ hot (<strong className="text-stone-900 font-medium">Black Myth Wukong</strong>).
+                      A section showcasing curated collections like Anime Figures (e.g., 2B), DC Figures (e.g., Superman), and trending releases (e.g., Black Myth Wukong).
                     </p>
                     <p className="text-stone-605 text-sm leading-relaxed font-light">
-                      Thiết kế dạng thẻ (Card UI) tinh gọn, bo góc mềm mại, hiển thị rõ ràng số lượng sản phẩm đang có và danh mục phân loại đi kèm.
+                      Clean Card UI design with smooth borders, displaying item counts and sub-categories clearly.
                     </p>
                   </div>
                 </div>
@@ -181,16 +181,16 @@ export default function HotToysShowcase({ isOpen, onClose }: HotToysShowcaseProp
               >
                 <div className="lg:col-span-5 space-y-5 text-left">
                   <span className="text-[10px] font-mono tracking-wider text-[#064E3B] uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
-                    Danh Mục & Chi Tiết
+                    Catalog & Product Details
                   </span>
                   <h4 className="font-serif text-2xl font-light text-stone-900">
-                    Mua Sắm Đa Dạng & Thuận Tiện
+                    Diverse & Convenient Shopping
                   </h4>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Trang phân loại sản phẩm theo vũ trụ hoặc danh mục hãng sản xuất như DC, Marvel, Anime.
+                    Product categorization by universe or brand, such as DC, Marvel, or Anime.
                   </p>
                   <p className="text-stone-605 text-sm leading-relaxed font-light">
-                    Mỗi sản phẩm hiển thị đầy đủ thông tin: ảnh chụp sắc nét cận cảnh từ các hãng Hot Toys, InArt, trạng thái kho hàng, mức giá VNĐ trực quan, nút "Thêm vào giỏ" và "Xem chi tiết" tiện lợi.
+                    Each product lists detailed specs: high-definition closeups from Hot Toys or InArt, inventory status, local price (VND), and quick action buttons for "Add to Cart" or "View Details".
                   </p>
                 </div>
                 <div className="lg:col-span-7 flex justify-center">
@@ -205,7 +205,7 @@ export default function HotToysShowcase({ isOpen, onClose }: HotToysShowcaseProp
                     />
                     <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                        Xem kích thước gốc
+                        View Original Size
                       </span>
                     </div>
                   </div>
@@ -222,16 +222,16 @@ export default function HotToysShowcase({ isOpen, onClose }: HotToysShowcaseProp
               >
                 <div className="lg:col-span-5 space-y-5 text-left">
                   <span className="text-[10px] font-mono tracking-wider text-stone-700 uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
-                    Báo Cáo & Quản Trị
+                    Reports & Admin Dashboard
                   </span>
                   <h4 className="font-serif text-2xl font-light text-stone-900">
-                    Dashboard Thống Kê Chi Tiết
+                    Detailed Analytics Dashboard
                   </h4>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Hệ thống tích hợp bảng điều khiển thông minh dành riêng cho Administrator nhằm kiểm soát toàn bộ dòng doanh thu của cửa hàng.
+                    The system integrates a dedicated smart admin dashboard for managers to monitor and manage store revenues.
                   </p>
                   <p className="text-stone-605 text-sm leading-relaxed font-light">
-                    Bao gồm các biểu đồ trực quan động: biểu đồ cột và đường biểu diễn doanh thu & số lượng đơn hàng, biểu đồ tròn phân tích tỉ lệ phần trăm các sản phẩm bán chạy nhất, thống kê tổng doanh thu đạt được và danh sách khách hàng.
+                    Includes interactive data charts: line and bar graphs tracking revenue and order volume, pie charts analyzing best-selling products, overall gross income statistics, and user account tables.
                   </p>
                 </div>
                 <div className="lg:col-span-7 flex justify-center">
@@ -246,7 +246,7 @@ export default function HotToysShowcase({ isOpen, onClose }: HotToysShowcaseProp
                     />
                     <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                        Xem kích thước gốc
+                        View Original Size
                       </span>
                     </div>
                   </div>

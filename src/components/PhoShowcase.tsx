@@ -54,31 +54,31 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
   if (!isOpen) return null
 
   const tabs = [
-    { id: 'wireframe', label: 'Cấu trúc Wireframe', icon: <Grid size={14} /> },
-    { id: 'design-system', label: 'Quy chuẩn Design Token', icon: <Palette size={14} /> },
-    { id: 'product', label: 'Sản phẩm hoàn thiện', icon: <Layout size={14} /> },
+    { id: 'wireframe', label: 'Wireframe Structure', icon: <Grid size={14} /> },
+    { id: 'design-system', label: 'Design Tokens', icon: <Palette size={14} /> },
+    { id: 'product', label: 'Final Showcase', icon: <Layout size={14} /> },
   ] as const
 
   const colors = [
-    { hex: '#1C0E07', name: 'BG1', usage: 'Màu nền chính (tông nâu ấm), mang hương vị ấm nồng của nước dùng Phở bò.' },
-    { hex: '#FAF4EA', name: 'BG2', usage: 'Màu nền phụ (tông kem nhạt), mang cảm giác thanh tao của sợi bánh phở sạch.' },
-    { hex: '#26140B', name: 'Nav', usage: 'Màu thanh điều hướng, giúp cố định khung thiết kế vững chãi ở phần đầu.' },
-    { hex: '#D1A377', name: 'Text 1', usage: 'Màu chữ chính và các nhãn phụ (tông nâu vàng nhạt).' },
-    { hex: '#C23A22', name: 'Text 2', usage: 'Màu điểm nhấn (tông đỏ ớt ấm), tạo cảm giác kích thích vị giác và cuốn hút.' },
+    { hex: '#1C0E07', name: 'BG1', usage: 'Primary background color (warm brown tone), capturing the rich warmth of Pho beef broth.' },
+    { hex: '#FAF4EA', name: 'BG2', usage: 'Secondary background color (light cream tone), evoking the elegance of clean, fresh rice noodles.' },
+    { hex: '#26140B', name: 'Nav', usage: 'Navigation bar color, anchoring the layout structure securely at the top.' },
+    { hex: '#D1A377', name: 'Text 1', usage: 'Primary text and secondary label color (light golden-brown tone).' },
+    { hex: '#C23A22', name: 'Text 2', usage: 'Accent color (warm chili red tone), stimulating the senses and creating visual appeal.' },
   ]
 
   const typography = [
-    { tag: 'Heading 1', spec: '60/60 Line Height', usage: 'Tiêu đề chính ở khu vực giới thiệu Hero Section' },
-    { tag: 'Food Name', spec: '48/48 Line Height', usage: 'Tên các món phở đặc trưng trong thực đơn' },
-    { tag: 'Text 0', spec: '24/32 Line Height', usage: 'Tiêu đề phụ hoặc đoạn trích dẫn ngắn' },
-    { tag: 'Text 1 / Description', spec: '18/26 Line Height', usage: 'Đoạn mô tả chính, câu chuyện về văn hóa Phở' },
-    { tag: 'Small Heading', spec: '14/20 Line Height', usage: 'Các thẻ nhãn nhỏ phân loại nội dung' },
+    { tag: 'Heading 1', spec: '60/60 Line Height', usage: 'Main heading in the introductory Hero Section.' },
+    { tag: 'Food Name', spec: '48/48 Line Height', usage: 'Names of signature Pho dishes on the menu.' },
+    { tag: 'Text 0', spec: '24/32 Line Height', usage: 'Subheadings or short blockquotes.' },
+    { tag: 'Text 1 / Description', spec: '18/26 Line Height', usage: 'Primary body descriptions, highlighting the heritage story of Pho.' },
+    { tag: 'Small Heading', spec: '14/20 Line Height', usage: 'Small badges and labels classifying content.' },
   ]
 
   const productSections = [
-    { id: 'hero', name: 'Hero Section', path: '/projects/pho/product_hero.png', desc: 'Giao diện mở đầu với tiêu đề lớn nổi bật trên nền tô Phở đặc trưng, kèm thanh điều hướng (Story, Ingredients, Variants, Culture) mang tông nâu ấm cổ điển.' },
-    { id: 'story', name: 'Story & Ingredients', path: '/projects/pho/product_story.png', desc: 'Trình bày câu chuyện nguồn gốc Phở kết hợp hình ảnh chân thực và danh sách 4 nguyên liệu cốt lõi (Bánh phở, Nước dùng, Rau thơm, Thịt bò).' },
-    { id: 'variants', name: 'Signature Variants', path: '/projects/pho/product_variants.png', desc: 'Giới thiệu các phiên bản Phở đặc trưng: Phở Bò (Classic Beef), Phở Gà (Chicken), Phở Chay (Vegetarian) với màu sắc hài hòa kích thích vị giác.' },
+    { id: 'hero', name: 'Hero Section', path: '/projects/pho/product_hero.png', desc: 'Introductory interface with a prominent heading layered over an authentic Pho background, paired with a classic warm-brown navigation bar (Story, Ingredients, Variants, Culture).' },
+    { id: 'story', name: 'Story & Ingredients', path: '/projects/pho/product_story.png', desc: 'Presents the origin story of Pho, blending clean photography with a list of 4 key ingredients (Noodles, Broth, Herbs, Beef).' },
+    { id: 'variants', name: 'Signature Variants', path: '/projects/pho/product_variants.png', desc: 'Showcases signature Pho variants: Beef (Pho Bo), Chicken (Pho Ga), and Vegetarian (Pho Chay) with appetizing, harmonious color palettes.' },
   ] as const
 
   return (
@@ -107,7 +107,7 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
               <span className="flex h-2.5 w-2.5 rounded-full bg-[#C23A22] animate-pulse" />
               <div>
                 <h3 className="font-serif text-lg font-normal text-stone-900">
-                  Pho Landing Page — Quá Trình Thực Hiện
+                  Pho Landing Page — Work Process
                 </h3>
                 <p className="text-[9px] text-stone-400 font-mono tracking-wider">VIETNAMESE HERITAGE PHO PAGE DESIGN</p>
               </div>
@@ -150,16 +150,16 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
               >
                 <div className="lg:col-span-5 space-y-5 text-left">
                   <span className="text-[10px] font-mono tracking-wider text-[#C23A22] uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
-                    Phác thảo cấu trúc (UX Wireframes)
+                    Structure Sketch (UX Wireframes)
                   </span>
                   <h4 className="font-serif text-2xl font-light text-stone-900">
-                    Bố cục tạp chí & Phân cấp nội dung
+                    Magazine Layout & Content Hierarchy
                   </h4>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Quá trình bắt đầu với việc xây dựng các khung xương giao diện (Frames 22, 18, 19, 23, 24) nhằm phân bổ thông tin và hình ảnh một cách phi đối xứng theo phong cách tạp chí cao cấp.
+                    The process began with building interface skeletons (Frames 22, 18, 19, 23, 24) to distribute information and visuals asymmetrically, mimicking premium magazine layouts.
                   </p>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Các khu vực được phân định rõ ràng giúp tối ưu hóa luồng đọc của người dùng: từ tiêu đề thu hút ở Hero banner, câu chuyện chi tiết bên cạnh hình ảnh minh họa lớn, các nguyên liệu phụ, đến danh sách các biến thể phở dạng lưới ba cột cân xứng.
+                    Clearly demarcated zones optimize user reading flow: moving from a bold hook in the Hero banner, to heritage stories alongside prominent graphics, core ingredients, and a balanced three-column grid showcasing product variants.
                   </p>
                   
                   <div className="pt-2">
@@ -170,7 +170,7 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
                       className="inline-flex items-center gap-1.5 px-4 py-2 border border-stone-300 hover:border-stone-900 text-xs font-semibold text-stone-700 hover:text-stone-900 rounded-lg transition-all bg-white"
                     >
                       <FigmaIcon size={12} />
-                      <span>Xem File Figma Gốc</span>
+                      <span>View Original Figma File</span>
                     </a>
                   </div>
                 </div>
@@ -186,7 +186,7 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
                     />
                     <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                        Xem kích thước gốc
+                        View Original Size
                       </span>
                     </div>
                   </div>
@@ -207,10 +207,10 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
                     Design Tokens
                   </span>
                   <h4 className="font-serif text-2xl font-light text-stone-900">
-                    Typography & Color Styles chuyên biệt
+                    Dedicated Typography & Color Styles
                   </h4>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Hệ thống các mã định danh thiết kế (Tokens) của dự án Phở hướng tới cảm xúc cổ điển, ấm cúng và kích thích vị giác qua việc dùng phông chữ serif sang trọng và gam màu nóng tự nhiên của ẩm thực Việt Nam.
+                    The design tokens for the Pho project evoke a classic, cozy, and appetizing feel, achieved through premium serif typography and warm, natural hues inspired by Vietnamese culinary heritage.
                   </p>
                 </div>
 
@@ -219,7 +219,7 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
                   <div className="lg:col-span-5 space-y-6 text-left">
                     <h5 className="font-serif text-base font-semibold text-stone-900 flex items-center gap-2 pb-2 border-b border-stone-100">
                       <Palette size={14} className="text-stone-500" />
-                      <span>Bảng màu nhận diện</span>
+                      <span>Brand Color Palette</span>
                     </h5>
                     
                     <div className="space-y-2.5">
@@ -248,7 +248,7 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
                   <div className="lg:col-span-7 space-y-6 text-left">
                     <h5 className="font-serif text-base font-semibold text-stone-900 flex items-center gap-2 pb-2 border-b border-stone-100">
                       <Type size={14} className="text-stone-500" />
-                      <span>Phân cấp Phông chữ (Typo Hierarchy)</span>
+                      <span>Typography Hierarchy</span>
                     </h5>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
@@ -277,7 +277,7 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
                         />
                         <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                           <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                            Xem hình gốc
+                            View Original Image
                           </span>
                         </div>
                       </div>
@@ -296,13 +296,13 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
               >
                 <div className="text-left max-w-3xl space-y-2">
                   <span className="text-[10px] font-mono tracking-wider text-[#C23A22] uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
-                    Sản Phẩm Hoàn Thiện
+                    Finished Product
                   </span>
                   <h4 className="font-serif text-2xl font-light text-stone-900">
-                    Giao diện Trang đích sắc nét
+                    Polished Landing Page Interface
                   </h4>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Sản phẩm thực tế được lập trình trung thực theo thiết kế Figma, hiển thị trọn vẹn vẻ đẹp tinh tế của tô Phở và các khối thông tin văn hóa đi kèm. Chọn từng phần dưới đây để xem chi tiết:
+                    The final live product is coded pixel-perfect to the Figma design, preserving the visual elegance of the Pho dishes and cultural storytelling layouts. Select each section below to inspect the details:
                   </p>
                 </div>
 
@@ -335,7 +335,7 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
                       className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2"
                     >
                       <div className="lg:col-span-4 text-left space-y-3">
-                        <span className="text-[10px] font-mono text-[#D1A377] font-bold uppercase">Mô tả giao diện</span>
+                        <span className="text-[10px] font-mono text-[#D1A377] font-bold uppercase">Interface Description</span>
                         <h5 className="font-serif text-lg text-stone-900 font-bold">{sect.name}</h5>
                         <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-light">{sect.desc}</p>
                         
@@ -347,7 +347,7 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
                             className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-stone-900 hover:bg-stone-800 text-[#FDFBF7] text-xs font-medium rounded-lg shadow-sm transition-all text-center"
                           >
                             <ExternalLink size={12} />
-                            <span>Truy cập Trang Web thực tế</span>
+                            <span>Visit Live Website</span>
                           </a>
                         </div>
                       </div>
@@ -364,7 +364,7 @@ export default function PhoShowcase({ isOpen, onClose }: PhoShowcaseProps) {
                           />
                           <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                              Xem kích thước lớn
+                              View Large Size
                             </span>
                           </div>
                         </div>

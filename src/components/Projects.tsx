@@ -347,7 +347,7 @@ export default function Projects() {
                   onClick={() => setIsPhoShowcaseOpen(true)}
                   className="flex items-center gap-1 py-1 text-stone-900 hover:text-[#C23A22] text-xs font-semibold tracking-wide transition-all ml-auto hover:underline"
                 >
-                  <span>Xem Thiết Kế</span>
+                  <span>View Design</span>
                   <ArrowRight size={12} />
                 </button>
               </div>

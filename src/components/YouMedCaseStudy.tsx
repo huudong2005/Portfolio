@@ -29,26 +29,26 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
   if (!isOpen) return null
 
   const tabs = [
-    { id: 'brand', label: 'Thương hiệu & Logo', icon: <Compass size={14} /> },
-    { id: 'design-system', label: 'Hệ thống thiết kế', icon: <Palette size={14} /> },
+    { id: 'brand', label: 'Brand & Logo', icon: <Compass size={14} /> },
+    { id: 'design-system', label: 'Design System', icon: <Palette size={14} /> },
     { id: 'components', label: 'Components & Chatbox', icon: <Layout size={14} /> },
-    { id: 'screens', label: 'Bản đồ giao diện', icon: <Grid size={14} /> },
+    { id: 'screens', label: 'Interface Maps', icon: <Grid size={14} /> },
   ] as const
 
   const colors = [
-    { hex: '#007AFF', label: 'Top App Bar', desc: 'Màu nhận diện y tế chính thức, tạo cảm giác chuyên nghiệp, an tâm.' },
-    { hex: '#3395FF', label: 'Màu nút primary', desc: 'Dùng cho các hành động chính như Đặt lịch ngay, Đặt khám.' },
-    { hex: '#32EA42', label: 'Màu nút secondary', desc: 'Tượng trưng cho sự tươi mới, dùng cho gọi video hoặc chat khẩn cấp.' },
-    { hex: '#FFFFFF', label: 'Màu nền trắng', desc: 'Không gian sạch sẽ, trực quan cho nền nội dung văn bản.' },
-    { hex: '#E6F2FF', label: 'Màu background 1', desc: 'Xanh nhạt dịu mắt cho các panel thông tin của bác sĩ.' },
-    { hex: '#B0D6FF', label: 'Màu background 2', desc: 'Màu nền hỗ trợ phân cấp các nhóm chức năng chính.' },
+    { hex: '#007AFF', label: 'Top App Bar', desc: 'Official medical brand identity color, instilling professionalism and trust.' },
+    { hex: '#3395FF', label: 'Primary Button', desc: 'Used for primary actions like "Book Now" or "Schedule Appointment".' },
+    { hex: '#32EA42', label: 'Secondary Button', desc: 'Symbolizes vitality, used for emergency video calls or chat.' },
+    { hex: '#FFFFFF', label: 'White Background', desc: 'Clean, intuitive white space for text content layouts.' },
+    { hex: '#E6F2FF', label: 'Background 1', desc: 'Soothing light blue for doctors information panels.' },
+    { hex: '#B0D6FF', label: 'Background 2', desc: 'Supporting background color to establish hierarchy among key functions.' },
   ]
 
   const typography = [
-    { tag: 'H5', spec: 'Heading 5 - 18pt Medium Inter', usage: 'Tiêu đề mỗi trang' },
-    { tag: 'H6', spec: 'Heading 6 - 15pt Medium Inter', usage: 'Tên bác sĩ, phòng khám, nút bấm...' },
-    { tag: 'P', spec: 'Paragraph - 15pt Regular Inter', usage: 'Thông tin mô tả bác sĩ, nội dung chi tiết...' },
-    { tag: 'P2', spec: 'Paragraph 2 - 10pt Regular Inter', usage: 'Tên bác sĩ phụ, địa chỉ phòng khám, ghi chú nhỏ...' },
+    { tag: 'H5', spec: 'Heading 5 - 18pt Medium Inter', usage: 'Header of each screen.' },
+    { tag: 'H6', spec: 'Heading 6 - 15pt Medium Inter', usage: 'Doctor names, clinics, buttons, etc.' },
+    { tag: 'P', spec: 'Paragraph - 15pt Regular Inter', usage: 'Doctor descriptions, detailed information, etc.' },
+    { tag: 'P2', spec: 'Paragraph 2 - 10pt Regular Inter', usage: 'Secondary doctor names, clinic addresses, small notes, etc.' },
   ]
 
   return (
@@ -120,29 +120,29 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
               >
                 <div className="lg:col-span-5 space-y-5 text-left">
                   <span className="text-[10px] font-mono tracking-wider text-[#C2410C] uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
-                    Thương Hiệu & Nhận Diện
+                    Branding & Identity
                   </span>
                   <h4 className="font-serif text-2xl font-light text-stone-900">
-                    Logo YouMed Đa Dạng Theo Mùa
+                    Seasonal Variations of the YouMed Logo
                   </h4>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Ý tưởng chủ đạo của biểu tượng logo YouMed là chữ <strong className="text-stone-900 font-medium">"Y"</strong> được bo góc mềm mại, tạo thành nhánh cây hoặc hình dáng một trái tim đang mở rộng, gửi gắm thông điệp chăm sóc tận tâm.
+                    The core concept of the YouMed logo symbol is a softly rounded letter <strong className="text-stone-900 font-medium">"Y"</strong>, forming a growing plant branch or an expanding heart, conveying a message of dedicated care.
                   </p>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Nhằm tăng tính tương tác và tạo sự hào hứng cho người bệnh, logo được tùy biến động theo các sự kiện lớn trong năm bao gồm:
+                    To enhance user engagement and delight patients, the logo adapts dynamically to major annual events:
                   </p>
                   <ul className="space-y-3 text-xs text-stone-600 font-sans font-light">
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                      <span><strong className="text-stone-900 font-medium">Phiên bản Normal:</strong> Thiết kế xanh dương tối giản, sạch sẽ và an toàn.</span>
+                      <span><strong className="text-stone-900 font-medium">Normal Version:</strong> Minimalist blue design, clean and secure.</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                      <span><strong className="text-stone-900 font-medium">Phiên bản Tết:</strong> Màu đỏ tài lộc, điểm xuyết hoa mai, hoa đào và họa tiết rước lộc truyền thống.</span>
+                      <span><strong className="text-stone-900 font-medium">Lunar New Year Version:</strong> Prosperous red color, adorned with apricot blossoms, peach blossoms, and traditional elements.</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
-                      <span><strong className="text-stone-900 font-medium">Phiên bản Noel:</strong> Tone xanh tuyết mát lạnh, đội mũ ông gia Noel dễ thương đón Giáng Sinh.</span>
+                      <span><strong className="text-stone-900 font-medium">Christmas Version:</strong> Chilly snow-blue tones, wearing a cute Santa hat to welcome Christmas.</span>
                     </li>
                   </ul>
                 </div>
@@ -158,7 +158,7 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                     />
                     <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                        Xem kích thước gốc
+                        View Original Size
                       </span>
                     </div>
                   </div>
@@ -179,10 +179,10 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                     Design Tokens
                   </span>
                   <h4 className="font-serif text-2xl font-light text-stone-900">
-                    Hệ Thống Phông Chữ & Bảng Màu Chuẩn Hóa
+                    Standardized Typography & Color System
                   </h4>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Hệ thống thiết kế YouMed được thiết lập dựa trên các nguyên tắc thiết kế phẳng nhưng tối ưu hóa khả năng nhận diện thông tin nhanh chóng trên thiết bị cầm tay.
+                    The YouMed design system is established based on flat design principles, optimized for rapid information scanning on mobile devices.
                   </p>
                 </div>
 
@@ -191,7 +191,7 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                   <div className="space-y-6 text-left">
                     <h5 className="font-serif text-base font-semibold text-stone-900 flex items-center gap-2 pb-2 border-b border-stone-100">
                       <Palette size={14} className="text-stone-500" />
-                      <span>Bảng màu YouMed (Palette)</span>
+                      <span>YouMed Color Palette</span>
                     </h5>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -225,7 +225,7 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                       />
                       <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                          Xem kích thước gốc
+                          View Original Size
                         </span>
                       </div>
                     </div>
@@ -235,7 +235,7 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                   <div className="space-y-6 text-left">
                     <h5 className="font-serif text-base font-semibold text-stone-900 flex items-center gap-2 pb-2 border-b border-stone-100">
                       <Type size={14} className="text-stone-500" />
-                      <span>Phân cấp Phông chữ (Typography)</span>
+                      <span>Typography Hierarchy</span>
                     </h5>
 
                     <div className="space-y-3">
@@ -263,7 +263,7 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                       />
                       <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                          Xem kích thước gốc
+                          View Original Size
                         </span>
                       </div>
                     </div>
@@ -284,10 +284,10 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                     UI Components & Chatbox
                   </span>
                   <h4 className="font-serif text-2xl font-light text-stone-900">
-                    Hệ Thống Thành Phần Độc Lập & Trợ Lý Ảo
+                    Independent Component System & Virtual Assistant
                   </h4>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Các khối giao diện (Figma Components) được xây dựng theo triết lý <strong className="text-stone-900 font-medium">Atomic Design</strong> giúp nhà phát triển dễ dàng tái sử dụng và đồng bộ giao diện trong toàn bộ hệ thống.
+                    Interface blocks (Figma Components) are built using Atomic Design methodology, enabling developers to easily reuse and synchronize interfaces across the entire system.
                   </p>
                   
                   <div className="space-y-4">
@@ -296,8 +296,8 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                         <Layout size={14} />
                       </div>
                       <div>
-                        <h6 className="text-xs font-bold text-stone-900">UI Components Thống Nhất</h6>
-                        <p className="text-[11px] text-stone-500 mt-0.5">Thanh định vị (Bottom Navigation), Ô tìm kiếm thông minh, Bộ lọc thời gian khám, các thẻ thông tin bác sĩ và nút hành động khẩn cấp.</p>
+                        <h6 className="text-xs font-bold text-stone-900">Unified UI Components</h6>
+                        <p className="text-[11px] text-stone-500 mt-0.5">Bottom navigation bars, smart search inputs, appointment schedule filters, doctor info cards, and emergency action buttons.</p>
                       </div>
                     </div>
 
@@ -306,8 +306,8 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                         <MessageSquare size={14} />
                       </div>
                       <div>
-                        <h6 className="text-xs font-bold text-stone-900">Trợ Lý AI YouMed (Chatbot)</h6>
-                        <p className="text-[11px] text-stone-500 mt-0.5">Luồng chat được thiết kế chu đáo để hướng dẫn người bệnh khai báo triệu chứng ban đầu. Sau đó đề xuất bệnh viện chuyên khoa và địa chỉ chính xác gần nhất.</p>
+                        <h6 className="text-xs font-bold text-stone-900">YouMed AI Assistant (Chatbot)</h6>
+                        <p className="text-[11px] text-stone-500 mt-0.5">A thoughtfully designed chat flow guiding patients to declare initial symptoms, then suggesting specialized hospitals and the nearest accurate clinics.</p>
                       </div>
                     </div>
                   </div>
@@ -325,7 +325,7 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                     />
                     <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="px-3 py-1.5 bg-stone-900/90 text-[10px] text-white font-mono rounded">
-                        Xem kích thước gốc
+                        View Original Size
                       </span>
                     </div>
                   </div>
@@ -342,13 +342,13 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
               >
                 <div className="text-left max-w-3xl space-y-2">
                   <span className="text-[10px] font-mono tracking-wider text-[#064E3B] uppercase font-bold px-2 py-0.5 rounded bg-stone-100/60 border border-stone-200/60">
-                    Bản Đồ Giao Diện
+                    Interface Maps
                   </span>
                   <h4 className="font-serif text-2xl font-light text-stone-900">
-                    Hệ Thống 20+ Màn Hình Chức Năng Hoàn Chỉnh
+                    Complete 20+ Functional Screens System
                   </h4>
                   <p className="text-stone-600 text-sm leading-relaxed font-light">
-                    Sơ đồ phân bổ và kết nối các màn hình của người dùng. Từ bước đăng nhập, khám phá danh bạ bác sĩ, tiến hành đặt chỗ trực tuyến, thực hiện cuộc gọi video tư vấn từ xa, đến quản lý hồ sơ bệnh án cá nhân.
+                    Visual layout and user flows connecting all screens. Covers onboarding, exploring doctor directories, booking online slots, remote video consultations, and personal medical record management.
                   </p>
                 </div>
 
@@ -365,7 +365,7 @@ export default function YouMedCaseStudy({ isOpen, onClose }: YouMedCaseStudyProp
                     <div className="absolute inset-0 bg-stone-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="px-3.5 py-2 bg-stone-900/90 text-xs text-white font-semibold rounded flex items-center gap-2">
                         <Info size={14} className="text-[#C2410C]" />
-                        <span>Nhấn để xem sơ đồ toàn màn hình</span>
+                        <span>Click to view full-screen diagram</span>
                       </span>
                     </div>
                   </div>
